@@ -4,3 +4,8 @@ document.getElementById('addItemsHeading').style.color = 'green';
 document.getElementById('addItemsHeading').style.fontWeight = 'bold';
 console.log(document.getElementById('addItemsHeading'));
 console.log('hello');
+let li = document.querySelectorAll('.list-group-item');
+li[2].style.backgroundColor = 'green';
+li.forEach((e) =>{
+e.style.fontWeight = 'bold';
+})
