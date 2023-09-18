@@ -9,3 +9,5 @@ li[2].style.backgroundColor = 'green';
 li.forEach((e) =>{
 e.style.fontWeight = 'bold';
 })
+let list2 = document.querySelectorAll('li');
+list2[4].style.color = 'blue';
