@@ -5,9 +5,17 @@ document.getElementById('addItemsHeading').style.fontWeight = 'bold';
 console.log(document.getElementById('addItemsHeading'));
 console.log('hello');
 let li = document.querySelectorAll('.list-group-item');
-li[2].style.backgroundColor = 'green';
+//li[2].style.backgroundColor = 'green';
 li.forEach((e) =>{
 e.style.fontWeight = 'bold';
 })
 let list2 = document.querySelectorAll('li');
 list2[4].style.color = 'blue';
+//let queryDemo = document.querySelector('.list-group-item:nth-child(2)').style.backgroundColor = 'green';
+//let queryDemo2 = document.querySelector('.list-group-item:nth-child(2)').style.display = 'none';
+//let querySelectorDemo = document.querySelectorAll('.list-group-item')[1].style.color = 'green';
+ var odd = document.querySelectorAll('.list-group-item:nth-child(1)')
+ for(let i = 0;i<odd.length;++i)
+ {
+ //   odd[i].style.backgroundColor = 'green';
+ }
