@@ -1,0 +1,81 @@
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registeration Form</title>
+    <style>
+        body{
+            text-align:center;
+            background-image:url('back1.jpg');
+        }
+        form{
+            text-align: center;
+            width:800px;
+            position:relative;
+            left:300px;
+            color:white;
+            padding:10px;
+            border:2px solid orange;
+            border-radius: 10px;
+            
+        }
+        label{
+            position: relative;
+            right: 170;
+            margin:10px;
+        }
+        input{
+            width:380px;
+            margin:10px;
+            height:30px;
+        }
+    </style>
+</head>
+<body>
+    <form id ="addForm">
+        <h3 style="color:orange">Book a call</h3>
+        
+        <p>Book a call slot and our representative will call you within 1hr of selected time.</p>
+        <hr>
+        <label>Name:</label>
+        <br>
+        <input type="text" id="one">
+        <br>
+        <label>Email:</label>
+        <br>
+        <input type="email" id="two">
+        <br>
+        <label>Phone:</label>
+        <br>
+        <input type="Number" id="three" >
+        <br>
+        <label style ="position: relative;
+         right: 146;">Time for Call:</label>
+        <br>
+       
+         <input type="Date" style="width:180px;">
+          <input type="Time" style="width:180px;">
+          <br>
+          <input type="submit" value="GET A CALL" style="background-color: orange;">
+        </form>
+
+        <script >
+            var form = document.getElementById('addForm');
+            var name = document.getElementById('one')
+            var email =  document.getElementById('two')
+            var password = document.getElementById('three')
+            form.addEventListener('submit',mySubmit);
+            function mySubmit(e)
+            {    
+                e.preventDefault();
+               const  n = name.value; 
+                const em =email.value; 
+                const p = password.value; 
+                 console.log(n);
+                 console.log("hello");
+                } 
+               </script>
+</body>
+</html>
