@@ -1,4 +1,4 @@
-document.getElementById('main-header').style.border = '2px solid black';
+/*document.getElementById('main-header').style.border = '2px solid black';
 //document.title.style.border = '1px solid black';
 document.getElementById('addItemsHeading').style.color = 'green';
 document.getElementById('addItemsHeading').style.fontWeight = 'bold';
@@ -44,3 +44,36 @@ let text  = document.createTextNode('hello world');
 newElem.appendChild(text);
 head.insertBefore(newElem,element);
 
+*/
+let form = document.getElementById('addForm');
+form.addEventListener('submit',addElement);
+let li = document.querySelector('li');
+li.addEventListener('click',removeElement);
+
+function addElement(e) {
+    
+    e.preventDefault();
+    let li = document.createElement('li');
+    li.className = 'list-group-item';
+    let item = document.getElementById('item').value;
+    li.appendChild(document.createTextNode(item));
+    console.log(li);
+    let btn = document.createElement('button');
+    btn.className = 'btn btn-danger btn-sm float-right delete';
+    btn.appendChild(document.createTextNode('X'));
+    li.appendChild(btn);
+    console.log(li);
+    var items  = document.getElementById('items');
+    items.appendChild(li);
+}
+function removeElement(e){
+if(e.target.classList.contains('delete'))
+{
+    if(confirm('Are you sure?'))
+    {
+        let li = e.target.parentElement;
+         items.removeChild(li);
+    }
+
+}
+}
