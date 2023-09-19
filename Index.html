@@ -63,16 +63,19 @@
 
         <script >
             var form = document.getElementById('addForm');
-            var name = document.getElementById('one')
-            var email =  document.getElementById('two')
-            var password = document.getElementById('three')
+            var name2 = document.getElementById('one');
+            var email =  document.getElementById('two');
+            var password = document.getElementById('three');
             form.addEventListener('submit',mySubmit);
             function mySubmit(e)
             {    
                 e.preventDefault();
-               const  n = name.value; 
+               const n = name2.value; 
                 const em =email.value; 
                 const p = password.value; 
+                localStorage.setItem("Name" , n);
+                localStorage.setItem("email" , em);
+                localStorage.setItem("password" , p);
                  console.log(n);
                  console.log("hello");
                 } 
