@@ -14,7 +14,10 @@ var newObj = JSON.stringify(Obj);
 localStorage.setItem("newObj" , newObj);
 console.log(localStorage);
 var op = JSON.parse(localStorage.getItem('newObj'));
-document.getElementById('output').innerText =  op.name + '  ' + op.email+ '  ' + op.pasword;
-
+var elem = document.createElement('p');
+var text = document.createTextNode(op.name + ' ' + op.email + ' ' + op.password );
+elem.appendChild(text);
+var output = document.getElementById('output');
+addForm.insertBefore(elem , output);
 }
 
