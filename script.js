@@ -19,3 +19,28 @@ list2[4].style.color = 'blue';
  {
  //   odd[i].style.backgroundColor = 'green';
  }
+ //-------------------------------------------------------------------------------
+
+let element = document.querySelector('#items');
+console.log(element.parentNode); 
+console.log(element.parentElement);
+//Parent Node and Parent Element can be used interchangeably
+console.log(element.childNodes);
+
+console.log(element.children);
+console.log(element.children[2]);
+console.log(element.firstChild);
+console.log(element.firstElementChild);
+console.log(element.lastChild);
+console.log(element.lastElementChild);
+console.log(element.previousElementSibling);
+console.log(element.nextElementSibling);
+let head = document.getElementById('main');
+let newElem = document.createElement('div');
+ newElem.className = 'newClass';
+newElem.id = 'newId';
+console.log(newElem);  
+let text  = document.createTextNode('hello world');
+newElem.appendChild(text);
+head.insertBefore(newElem,element);
+
