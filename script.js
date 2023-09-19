@@ -47,10 +47,10 @@ head.insertBefore(newElem,element);
 */
 let form = document.getElementById('addForm');
 form.addEventListener('submit',addElement);
-let li = document.querySelector('li');
+var li = document.getElementById('items');
 li.addEventListener('click',removeElement);
 let filter = document.getElementById('filter');
-console.log(filter);
+//console.log(filter);
 filter.addEventListener('keyup',filterItems)
 function filterItems(e)
 {
@@ -71,25 +71,33 @@ Array.from(items1).forEach((elem) =>{
 function addElement(e) {
     
     e.preventDefault();
-    let li = document.createElement('li');
+    var li = document.createElement('li');
     li.className = 'list-group-item';
     let item = document.getElementById('item').value;
+    let item2 = document.getElementById('item2').value;
     li.appendChild(document.createTextNode(item));
+    let newP = document.createElement('p');
+    newP.appendChild(document.createTextNode(" " +item2));
+    li.appendChild(newP);
     console.log(li);
     let btn = document.createElement('button');
     btn.className = 'btn btn-danger btn-sm float-right delete';
+   
+   
     btn.appendChild(document.createTextNode('X'));
+  
     li.appendChild(btn);
     console.log(li);
     var items  = document.getElementById('items');
     items.appendChild(li);
 }
 function removeElement(e){
-if(e.target.classList.contains('delete'))
+    console.log(1);
+if(e.target.classList.contains('btn'))
 {
     if(confirm('Are you sure?'))
     {
-        let li = e.target.parentElement;
+        var li = e.target.parentElement;
          items.removeChild(li);
     }
 
