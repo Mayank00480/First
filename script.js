@@ -49,6 +49,24 @@ let form = document.getElementById('addForm');
 form.addEventListener('submit',addElement);
 let li = document.querySelector('li');
 li.addEventListener('click',removeElement);
+let filter = document.getElementById('filter');
+console.log(filter);
+filter.addEventListener('keyup',filterItems)
+function filterItems(e)
+{
+    console.log(1);
+let text1 = e.target.value.toLowerCase();
+console.log(text1);
+let items1 = document.getElementsByTagName('li');
+Array.from(items1).forEach((elem) =>{
+    let data = elem.firstChild.textContent;
+    if(data.toLowerCase().indexOf(text1) != -1)
+    {
+        elem.style.display = 'block';
+    }
+    else elem.style.display = 'none'; 
+})
+}
 
 function addElement(e) {
     
