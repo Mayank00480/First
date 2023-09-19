@@ -73,11 +73,19 @@
                const n = name2.value; 
                 const em =email.value; 
                 const p = password.value; 
-                localStorage.setItem("Name" , n);
-                localStorage.setItem("email" , em);
-                localStorage.setItem("password" , p);
-                 console.log(n);
-                 console.log("hello");
+                let myObj = {
+                    name : n,
+                    email : em,
+                    password : p 
+                }
+                 console.log(myObj);
+                 let myNewObj = JSON.stringify(myObj);
+                 localStorage.setItem("myObj" , myNewObj);
+                 let obj = JSON.parse(localStorage.getItem('myObj'))
+                 console.log(obj.name);
+                // console.log(localStorage);
+                 //console.log(localStorage.getItem('myObj').name);
+
                 } 
                </script>
 </body>
